@@ -13,9 +13,12 @@ spec:
       labels:
         app: cicd-app
     spec:
+      imagePullSecrets:
+      - name: ghcr-secret
       containers:
       - name: cicd-app
         image: ghcr.io/devchaudhary666/cicd-app:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
 ---
